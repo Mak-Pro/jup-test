@@ -4,7 +4,8 @@
   max-width: calc($maxWidth - $containerGlobalPadding * 2);
   position: fixed;
   left: 50%;
-  transform: translateX(calc(-50% - $containerGlobalPadding));
+  top: $bottomGlobalPadding;
+  transform: translateX(-50%);
   width: calc(100% - $containerGlobalPadding * 2);
   text-align: center;
 

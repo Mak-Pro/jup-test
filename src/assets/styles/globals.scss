@@ -426,3 +426,10 @@ button {
     bottom: calc($bottomGlobalPadding + 10px) !important;
   }
 }
+
+.search-title {
+  &.search-title-active {
+    top: auto;
+    bottom: calc($tgViewportHeight - 96px);
+  }
+}

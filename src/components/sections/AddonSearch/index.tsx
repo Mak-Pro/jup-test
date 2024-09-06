@@ -108,9 +108,6 @@ export const AddonSearch = () => {
 
       {!token && !loading && (
         <>
-          <div className={styles.search}>
-            <h3 className={styles.search__title}>Search</h3>
-          </div>
           <SearchField callBack={(value) => setAddress(value)} />
         </>
       )}
