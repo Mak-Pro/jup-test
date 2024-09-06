@@ -3,9 +3,19 @@ import Image from "next/image";
 import { useState, useEffect, FocusEvent, useRef } from "react";
 import styles from "./style.module.scss";
 
-export const SearchField = () => {
+export const SearchField = ({
+  callBack,
+}: {
+  callBack: (value: string) => void;
+}) => {
   const [searchValue, setSearchValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (searchValue.length === 43 || searchValue.length === 44) {
+      callBack(searchValue);
+    }
+  }, [searchValue]);
 
   const handleFocusBlur = (e: FocusEvent<HTMLInputElement, Element>) => {
     if (

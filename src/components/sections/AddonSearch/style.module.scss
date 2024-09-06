@@ -1,9 +1,13 @@
 .search {
-  // height: $tgViewportHeight;
   display: flex;
   flex-direction: column;
-  // padding-bottom: $bottomGlobalNavPadding;
-  position: relative;
+  max-width: calc($maxWidth - $containerGlobalPadding * 2);
+  position: fixed;
+  left: 50%;
+  transform: translateX(calc(-50% - $containerGlobalPadding));
+  width: calc(100% - $containerGlobalPadding * 2);
+  text-align: center;
+
   z-index: 15;
 
   &__spinner {

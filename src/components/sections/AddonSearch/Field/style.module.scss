@@ -43,4 +43,5 @@
   width: calc(100% - $containerGlobalPadding * 2);
   margin: 0 $containerGlobalPadding;
   bottom: $bottomGlobalNavPadding;
+  z-index: 15;
 }
