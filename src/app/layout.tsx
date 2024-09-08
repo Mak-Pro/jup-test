@@ -1,3 +1,4 @@
+import type { Viewport } from "next";
 import Script from "next/script";
 import "@/assets/styles/globals.scss";
 import { Providers } from "@/providers";
@@ -8,6 +9,13 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   title: "Telegram bot App",
