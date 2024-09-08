@@ -48,10 +48,7 @@ export const SearchField = ({
 
   return (
     <>
-      <div className={`${styles.search} search-title`}>
-        <h3 className={styles.search__title}>Search</h3>
-      </div>
-      <div className={`${styles.search__action_box} search-box`}>
+      <div className={`${styles.search__action}`}>
         <h6 className={styles.search__action_title}>
           To buy a token enter a token address
         </h6>

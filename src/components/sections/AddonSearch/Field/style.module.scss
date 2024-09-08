@@ -1,3 +1,9 @@
+.search__action {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
 .search__action_field {
   display: flex;
   align-items: center;

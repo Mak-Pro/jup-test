@@ -10,16 +10,14 @@
     visibility: visible;
   }
 
-  &__top {
-    display: flex;
-    justify-content: center;
-    padding: 30px 0;
-  }
-
-  &__center {
-  }
-
-  &__bottom {
+  &__box {
+    max-width: calc($maxWidth - $containerGlobalPadding * 2);
+    position: fixed;
+    left: 50%;
+    transform: translateX(calc(-50% - $containerGlobalPadding));
+    width: calc(100% - $containerGlobalPadding * 2);
+    margin: 0 $containerGlobalPadding;
+    z-index: 15;
   }
 
   &__action {

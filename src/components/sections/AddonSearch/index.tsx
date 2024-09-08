@@ -122,8 +122,15 @@ export const AddonSearch = () => {
 
       const iphoneHandler = () => {
         if (window.visualViewport) {
-          console.log("visualViewport", window.visualViewport.height);
           document.body.style.height = `${window.visualViewport.height}px`;
+
+          if (document.querySelector(".search-box") !== null) {
+            const box = document.querySelector(".search-box") as HTMLElement;
+            const boxHeight = box.offsetHeight;
+            box.style.top = `${
+              window.visualViewport.height - boxHeight - 15
+            }px`;
+          }
         }
       };
 
@@ -177,7 +184,12 @@ export const AddonSearch = () => {
 
       {!token && !loading && (
         <>
-          <SearchField callBack={(value) => setAddress(value)} />
+          <div className={`${styles.search}`}>
+            <h3 className={styles.search__title}>Search</h3>
+          </div>
+          <div className={`${styles.search__box} search-box`}>
+            <SearchField callBack={(value) => setAddress(value)} />
+          </div>
         </>
       )}
 
