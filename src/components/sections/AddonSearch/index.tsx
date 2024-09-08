@@ -105,12 +105,15 @@ export const AddonSearch = () => {
   // window
   useEffect(() => {
     if (typeof window !== undefined) {
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
       document.body.style.overflow = "hidden";
 
       let ts: number | undefined;
       const onTouchStart = (e: TouchEvent) => {
-        console.log("touchstart");
-
         ts = e.touches[0].clientY;
       };
       document.documentElement.addEventListener("touchstart", onTouchStart, {
