@@ -149,6 +149,8 @@ export const AddonSearch = () => {
     handleResize();
 
     if (window.visualViewport) {
+      console.log(window.visualViewport);
+
       window.visualViewport.addEventListener("resize", handleResize);
     }
 
