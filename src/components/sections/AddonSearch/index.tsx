@@ -105,11 +105,7 @@ export const AddonSearch = () => {
   // window
   useEffect(() => {
     if (typeof window !== undefined) {
-      const overflow = 100;
-      document.body.style.overflowY = "hidden";
-      document.body.style.marginTop = `${overflow}px`;
-      document.body.style.paddingBottom = `${overflow}px`;
-      window.scrollTo(0, overflow);
+      document.body.style.overflow = "hidden";
 
       let ts: number | undefined;
       const onTouchStart = (e: TouchEvent) => {
