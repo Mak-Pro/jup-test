@@ -127,7 +127,11 @@ export const AddonSearch = () => {
           if (document.querySelector(".search-box") !== null) {
             const box = document.querySelector(".search-box") as HTMLElement;
             box.style.top = `${window.visualViewport.height - 100}px`;
-            window.scroll(0, 0);
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "instant",
+            });
           }
         }
       };
