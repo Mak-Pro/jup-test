@@ -139,6 +139,8 @@ export const AddonSearch = () => {
       });
 
       if (window.visualViewport) {
+        console.log(window.visualViewport.height);
+        console.log(document.getElementsByTagName("html")[0]);
         document.getElementsByTagName("html")[0].style.height =
           window.visualViewport.height.toString() + "px";
       }
