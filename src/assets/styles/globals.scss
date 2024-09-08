@@ -411,25 +411,14 @@ button {
   }
 }
 
-.search-active {
-  & > div {
-    padding-bottom: $bottomGlobalPadding;
+.action-box {
+  &-active {
+    margin-top: 100px;
   }
+}
 
+.search-active {
   & ~ nav {
     display: none;
-  }
-}
-
-.search-box {
-  &.search-box-active {
-    bottom: calc($bottomGlobalPadding + 10px) !important;
-  }
-}
-
-.search-title {
-  &.search-title-active {
-    top: auto;
-    bottom: calc($tgViewportHeight - 96px);
   }
 }

@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px 0;
+
+  &_title {
+    text-align: center;
+  }
 }
 
 .search__action_field {
@@ -30,10 +34,4 @@
       }
     }
   }
-}
-
-.search__action_title {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
 }

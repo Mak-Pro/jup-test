@@ -48,7 +48,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <>
       <main>{children}</main>
-      {navPages.includes(pathname) && !sellTokens && <Navigation />}
+      <Navigation />
       <SpinnerLoader className={`${loading ? "show" : ""}`} />
       <Toaster
         position="top-center"
