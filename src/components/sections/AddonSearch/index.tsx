@@ -127,9 +127,7 @@ export const AddonSearch = () => {
           if (document.querySelector(".search-box") !== null) {
             const box = document.querySelector(".search-box") as HTMLElement;
             const boxHeight = box.offsetHeight;
-            box.style.top = `${
-              window.visualViewport.height - boxHeight - 15
-            }px`;
+            box.style.top = `${window.visualViewport.height - 100}px`;
           }
         }
       };
