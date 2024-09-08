@@ -110,11 +110,19 @@ export const AddonSearch = () => {
   // window
   useEffect(() => {
     if (typeof window !== undefined) {
-      console.log(window);
+      const iphoneHandler = () => {
+        if (window.visualViewport) {
+          console.log("visualViewport", window.visualViewport.height);
+          document.body.style.height = `${window.visualViewport.height}px`;
+        }
+      };
+
+      iphoneHandler();
 
       if (window.visualViewport) {
-        console.log("visualViewport", window.visualViewport.height);
-        document.body.style.height = `${window.visualViewport.height}px`;
+        window.visualViewport.addEventListener("resize", () => {
+          iphoneHandler();
+        });
       }
     }
 
