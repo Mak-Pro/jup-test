@@ -17,6 +17,14 @@ export const SearchField = ({
     }
   }, [searchValue]);
 
+  const eventScroll = (e: Event) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (inputRef && inputRef.current !== null) {
+      inputRef.current.scrollIntoView();
+    }
+  };
+
   const handleFocusBlur = (e: FocusEvent<HTMLInputElement, Element>) => {
     if (
       inputRef &&
@@ -28,12 +36,20 @@ export const SearchField = ({
         document
           .querySelector(".action-box")
           ?.classList.add("action-box-active");
+
+        if (window) {
+          window.addEventListener("scroll", eventScroll);
+        }
       }
       if (e.type === "blur") {
         document.querySelector("main")?.classList.remove("search-active");
         document
           .querySelector(".action-box")
           ?.classList.remove("action-box-active");
+
+        if (window) {
+          window.removeEventListener("scroll", eventScroll);
+        }
       }
     }
   };
