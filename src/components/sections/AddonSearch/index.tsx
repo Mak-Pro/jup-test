@@ -113,6 +113,8 @@ export const AddonSearch = () => {
 
       let ts: number | undefined;
       const onTouchStart = (e: TouchEvent) => {
+        console.log("touchstart");
+
         ts = e.touches[0].clientY;
       };
       document.documentElement.addEventListener("touchstart", onTouchStart, {
