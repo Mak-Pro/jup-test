@@ -114,6 +114,7 @@ export const AddonSearch = () => {
 
       if (window.visualViewport) {
         console.log("visualViewport", window.visualViewport.height);
+        document.body.style.height = `${window.visualViewport.height}px`;
       }
     }
 
