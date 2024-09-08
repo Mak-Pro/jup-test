@@ -130,35 +130,37 @@ export const AddonSearch = () => {
       // document.body.style.paddingBottom = `${overflow}px`;
       // window.scrollTo(0, overflow);
 
-      let ts: number | undefined;
-      const onTouchStart = (e: TouchEvent) => {
-        ts = e.touches[0].clientY;
-      };
-      document.documentElement.addEventListener("touchstart", onTouchStart, {
-        passive: false,
-      });
+      // let ts: number | undefined;
+      // const onTouchStart = (e: TouchEvent) => {
+      //   ts = e.touches[0].clientY;
+      // };
+      // document.documentElement.addEventListener("touchstart", onTouchStart, {
+      //   passive: false,
+      // });
 
       if (window.visualViewport) {
         console.log(window.visualViewport.height);
-        console.log(document.getElementsByTagName("html")[0]);
-        document.getElementsByTagName("html")[0].style.height =
-          window.visualViewport.height.toString() + "px";
+        // console.log(document.getElementsByTagName("html")[0]);
+        // document.getElementsByTagName("html")[0].style.height =
+        //   window.visualViewport.height.toString() + "px";
       }
     };
+
+    handleResize();
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", handleResize);
+    }
 
     if (typeof window !== undefined) {
       // setWindowHeight(window.innerHeight);
       // setInitialHeight(window.innerHeight);
-      handleResize();
-
-      window.addEventListener("resize", handleResize);
-      if (window.visualViewport) {
-        window.visualViewport.addEventListener("resize", handleResize);
-      }
+      // handleResize();
+      // window.addEventListener("resize", handleResize);
     }
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      // window.removeEventListener("resize", handleResize);
       if (window.visualViewport) {
         window.visualViewport.removeEventListener("resize", handleResize);
       }
