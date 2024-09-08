@@ -109,27 +109,28 @@ export const AddonSearch = () => {
 
   // window
   useEffect(() => {
+    console.log(window);
+
+    if (window.visualViewport) {
+      console.log(window.visualViewport.height);
+    }
+
     const handleResize = () => {
       // const currentHeight = window.innerHeight;
       // document.body.style.height = `${currentHeight}px`;
       // document.body.style.overflow = "hidden";
-
       // if (currentHeight < initialHeight) {
       //   setIsKeyboardOpen(true);
-
       // } else {
       //   setIsKeyboardOpen(false);
       // }
-
       // setWindowHeight(currentHeight);
-
       // const overflow = 100;
       // document.body.style.overflowY = "hidden";
       // document.body.style.marginTop = `${overflow}px`;
       // document.body.style.height = window.innerHeight + overflow + "px";
       // document.body.style.paddingBottom = `${overflow}px`;
       // window.scrollTo(0, overflow);
-
       // let ts: number | undefined;
       // const onTouchStart = (e: TouchEvent) => {
       //   ts = e.touches[0].clientY;
@@ -137,21 +138,13 @@ export const AddonSearch = () => {
       // document.documentElement.addEventListener("touchstart", onTouchStart, {
       //   passive: false,
       // });
-
-      if (window.visualViewport) {
-        console.log(window.visualViewport.height);
-        // console.log(document.getElementsByTagName("html")[0]);
-        // document.getElementsByTagName("html")[0].style.height =
-        //   window.visualViewport.height.toString() + "px";
-      }
     };
 
-    handleResize();
+    // handleResize();
 
     if (window.visualViewport) {
-      console.log(window.visualViewport);
-
-      window.visualViewport.addEventListener("resize", handleResize);
+      // console.log(window.visualViewport);
+      // window.visualViewport.addEventListener("resize", handleResize);
     }
 
     if (typeof window !== undefined) {
@@ -167,7 +160,7 @@ export const AddonSearch = () => {
         window.visualViewport.removeEventListener("resize", handleResize);
       }
     };
-  }, []);
+  }, [window]);
 
   return (
     <>
