@@ -152,10 +152,16 @@ export const AddonSearch = () => {
       handleResize();
 
       window.addEventListener("resize", handleResize);
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", handleResize);
+      }
     }
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener("resize", handleResize);
+      }
     };
   }, []);
 
