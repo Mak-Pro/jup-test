@@ -109,10 +109,12 @@ export const AddonSearch = () => {
 
   // window
   useEffect(() => {
-    console.log(window);
+    if (typeof window !== undefined) {
+      console.log(window);
 
-    if (window.visualViewport) {
-      console.log(window.visualViewport.height);
+      if (window.visualViewport) {
+        console.log("visualViewport", window.visualViewport.height);
+      }
     }
 
     const handleResize = () => {
@@ -142,25 +144,13 @@ export const AddonSearch = () => {
 
     // handleResize();
 
-    if (window.visualViewport) {
-      // console.log(window.visualViewport);
-      // window.visualViewport.addEventListener("resize", handleResize);
-    }
-
-    if (typeof window !== undefined) {
-      // setWindowHeight(window.innerHeight);
-      // setInitialHeight(window.innerHeight);
-      // handleResize();
-      // window.addEventListener("resize", handleResize);
-    }
-
     return () => {
       // window.removeEventListener("resize", handleResize);
-      if (window.visualViewport) {
-        window.visualViewport.removeEventListener("resize", handleResize);
-      }
+      // if (window.visualViewport) {
+      //   window.visualViewport.removeEventListener("resize", handleResize);
+      // }
     };
-  }, [window]);
+  }, []);
 
   return (
     <>
