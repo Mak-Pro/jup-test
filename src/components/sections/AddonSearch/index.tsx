@@ -137,6 +137,11 @@ export const AddonSearch = () => {
       document.documentElement.addEventListener("touchstart", onTouchStart, {
         passive: false,
       });
+
+      if (window.visualViewport) {
+        document.getElementsByTagName("html")[0].style.height =
+          window.visualViewport.height.toString() + "px";
+      }
     };
 
     if (typeof window !== undefined) {
@@ -151,8 +156,6 @@ export const AddonSearch = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  console.log();
 
   return (
     <>
