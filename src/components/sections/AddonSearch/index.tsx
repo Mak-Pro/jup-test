@@ -24,6 +24,11 @@ export const AddonSearch = () => {
   const [chart, setChart] = useState("");
   const [ballance, setBallance] = useState<any[]>([]);
 
+  // window
+  // const [windowHeight, setWindowHeight] = useState(0);
+  // const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+  // const [initialHeight, setInitialHeight] = useState(0);
+
   const clearData = () => {
     setAddress("");
     setSolanaQuantity(0);
@@ -101,6 +106,38 @@ export const AddonSearch = () => {
       document.querySelector("main")?.classList.remove("search-active");
     }
   }, [address, fetchAllData]);
+
+  // window
+  useEffect(() => {
+    const handleResize = () => {
+      const currentHeight = window.innerHeight;
+      document.body.style.height = `${currentHeight}px`;
+      document.body.style.overflow = "hidden";
+
+      // if (currentHeight < initialHeight) {
+      //   setIsKeyboardOpen(true);
+
+      // } else {
+      //   setIsKeyboardOpen(false);
+      // }
+
+      // setWindowHeight(currentHeight);
+    };
+
+    if (typeof window !== undefined) {
+      // setWindowHeight(window.innerHeight);
+      // setInitialHeight(window.innerHeight);
+      handleResize();
+
+      window.addEventListener("resize", handleResize);
+    }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  console.log();
 
   return (
     <>
