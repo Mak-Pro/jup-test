@@ -1,14 +1,8 @@
 .search {
+  position: relative;
   display: flex;
   flex-direction: column;
-  max-width: calc($maxWidth - $containerGlobalPadding * 2);
-  position: fixed;
-  left: 50%;
-  top: $bottomGlobalPadding;
-  transform: translateX(-50%);
-  width: calc(100% - $containerGlobalPadding * 2);
   text-align: center;
-
   z-index: 15;
 
   &__spinner {

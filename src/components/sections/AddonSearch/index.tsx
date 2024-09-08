@@ -24,11 +24,6 @@ export const AddonSearch = () => {
   const [chart, setChart] = useState("");
   const [ballance, setBallance] = useState<any[]>([]);
 
-  // window
-  // const [windowHeight, setWindowHeight] = useState(0);
-  // const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
-  // const [initialHeight, setInitialHeight] = useState(0);
-
   const clearData = () => {
     setAddress("");
     setSolanaQuantity(0);
@@ -110,6 +105,14 @@ export const AddonSearch = () => {
   // window
   useEffect(() => {
     if (typeof window !== undefined) {
+      let ts: number | undefined;
+      const onTouchStart = (e: TouchEvent) => {
+        ts = e.touches[0].clientY;
+      };
+      document.documentElement.addEventListener("touchstart", onTouchStart, {
+        passive: false,
+      });
+
       const iphoneHandler = () => {
         if (window.visualViewport) {
           console.log("visualViewport", window.visualViewport.height);
